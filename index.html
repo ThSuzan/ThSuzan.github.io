@@ -458,16 +458,9 @@
     }
 
     /* ── LANGUAGE SWITCHING ── */
-    .fr { display: block; }
-    .en { display: none; }
-    body.en .fr { display: none; }
-    body.en .en { display: block; }
-
-    /* Inline bilingual text (spans) */
-    span.fr { display: inline; }
-    span.en { display: none; }
-    body.en span.fr { display: none; }
-    body.en span.en { display: inline; }
+    [data-lang="en"] { display: none; }
+    body.en [data-lang="fr"] { display: none; }
+    body.en [data-lang="en"] { display: revert; }
 
     /* ── MISC ── */
     a { color: var(--accent); }
@@ -495,13 +488,13 @@
         </h1>
       </div>
       <p class="title-line">
-        <span class="fr">Docteur en Mathématiques &amp; Informatique · Université Grenoble-Alpes</span>
-        <span class="en">PhD in Mathematics &amp; Computer Science · Université Grenoble-Alpes</span>
+        <span data-lang="fr">Docteur en Mathématiques &amp; Informatique · Université Grenoble-Alpes</span>
+        <span data-lang="en">PhD in Mathematics &amp; Computer Science · Université Grenoble-Alpes</span>
       </p>
       <div class="contacts">
         <a href="https://theses.fr/s338580" target="_blank" rel="noopener">
-          <span class="fr">Thèse (theses.fr)</span>
-          <span class="en">PhD Thesis (theses.fr)</span>
+          <span data-lang="fr">Thèse (theses.fr)</span>
+          <span data-lang="en">PhD Thesis (theses.fr)</span>
         </a>
       </div>
       <div class="ornament"></div>
@@ -517,19 +510,19 @@
       <!-- RESEARCH -->
       <section aria-labelledby="research-heading">
         <div class="section-label" id="research-heading">
-          <span class="fr">Recherche</span>
-          <span class="en">Research</span>
+          <span data-lang="fr">Recherche</span>
+          <span data-lang="en">Research</span>
         </div>
 
         <article class="research-item" itemscope itemtype="https://schema.org/CreativeWork">
           <h2 class="research-title" itemprop="name">
-            <span class="fr">Reconfiguration d'homomorphismes de graphes orientés</span>
-            <span class="en">Reconfiguration of Digraph Homomorphisms</span>
+            <span data-lang="fr">Reconfiguration d'homomorphismes de graphes orientés</span>
+            <span data-lang="en">Reconfiguration of Digraph Homomorphisms</span>
           </h2>
-          <p class="research-body fr">
+          <p class="research-body" data-lang="fr">
             Nous élargissons une approche topologique initiée par Wrochna (2014) à une classe de graphes bien plus grande, généralisant ainsi l'ensemble des résultats précédents. Ces travaux ont été présentés au <em>Combinatorial Reconfiguration Workshop</em> de Banff (2022), à CANADAM 2023 (Winnipeg) et aux Journées Graphes et Algorithmes (Lyon, 2023).
           </p>
-          <p class="research-body en">
+          <p class="research-body" data-lang="en">
             We extend a topological approach initiated by Wrochna (2014) to a significantly broader class of graphs, thereby generalising all prior results. Presented at the Combinatorial Reconfiguration Workshop in Banff (2022), CANADAM 2023 (Winnipeg) and the Journées Graphes et Algorithmes (Lyon, 2023).
           </p>
           <div class="keywords">
@@ -542,13 +535,13 @@
 
         <article class="research-item" itemscope itemtype="https://schema.org/CreativeWork">
           <h2 class="research-title" itemprop="name">
-            <span class="fr">Mélange d'homomorphismes et co-NP-complétude</span>
-            <span class="en">Mixing of Homomorphisms &amp; co-NP-completeness</span>
+            <span data-lang="fr">Mélange d'homomorphismes et co-NP-complétude</span>
+            <span data-lang="en">Mixing of Homomorphisms &amp; co-NP-completeness</span>
           </h2>
-          <p class="research-body fr">
+          <p class="research-body" data-lang="fr">
             En collaboration avec M. Mühlenthaler (UGA) et M. H. Siggers (KNU, Corée), nous étendons et corrigeons une approche topologique pour montrer que décider si le graphe de reconfiguration associé est connexe est un problème co-NP-complet pour une vaste classe de graphes orientés. Un manuscrit détaillé est en préparation.
           </p>
-          <p class="research-body en">
+          <p class="research-body" data-lang="en">
             Joint work with M. Mühlenthaler (UGA) and M. H. Siggers (KNU, Korea). We extend and correct a topological approach to prove that deciding whether the associated reconfiguration graph is connected is co-NP-complete for a broad class of digraphs. A detailed manuscript is in preparation.
           </p>
           <div class="keywords">
@@ -566,12 +559,12 @@
         <article class="pub" itemscope itemtype="https://schema.org/ScholarlyArticle">
           <h3 class="pub-title" itemprop="name">Reconfiguration of digraph homomorphisms</h3>
           <div class="pub-meta" itemprop="author">
-            <span class="fr">avec M. Mühlenthaler &amp; B. Lévêque</span>
-            <span class="en">with M. Mühlenthaler &amp; B. Lévêque</span>
+            <span data-lang="fr">avec M. Mühlenthaler &amp; B. Lévêque</span>
+            <span data-lang="en">with M. Mühlenthaler &amp; B. Lévêque</span>
           </div>
           <div class="pub-venue">
             <strong>STACS 2023</strong>
-            <span class="fr"> · puis </span><span class="en"> · extended version in </span>
+            <span data-lang="fr"> · puis </span><span data-lang="en"> · extended version in </span>
             <strong itemprop="isPartOf">SIAM Journal on Discrete Mathematics</strong> (2024)
           </div>
           <a class="pub-link" href="https://drops.dagstuhl.de/opus/volltexte/2023/17695" target="_blank" rel="noopener" itemprop="url">STACS proceedings (Dagstuhl)</a><br>
@@ -581,8 +574,8 @@
         <article class="pub" itemscope itemtype="https://schema.org/ScholarlyArticle">
           <h3 class="pub-title" itemprop="name">Reconfiguring homomorphisms to reflexive graphs via a simple reduction</h3>
           <div class="pub-meta" itemprop="author">
-            <span class="fr">avec M. Mühlenthaler &amp; M. H. Siggers</span>
-            <span class="en">with M. Mühlenthaler &amp; M. H. Siggers</span>
+            <span data-lang="fr">avec M. Mühlenthaler &amp; M. H. Siggers</span>
+            <span data-lang="en">with M. Mühlenthaler &amp; M. H. Siggers</span>
           </div>
           <div class="pub-venue"><strong itemprop="isPartOf">European Journal of Combinatorics</strong> <span itemprop="datePublished">(2025)</span></div>
           <a class="pub-link" href="https://www.sciencedirect.com/science/article/abs/pii/S0195669825001404" target="_blank" rel="noopener" itemprop="url">ScienceDirect</a>
@@ -592,27 +585,27 @@
       <!-- EDUCATION -->
       <section aria-labelledby="edu-heading">
         <div class="section-label" id="edu-heading">
-          <span class="fr">Formation</span>
-          <span class="en">Education</span>
+          <span data-lang="fr">Formation</span>
+          <span data-lang="en">Education</span>
         </div>
 
         <div class="edu-item">
           <div class="edu-year">2021 – 2024</div>
           <div class="edu-degree">
-            <span class="fr">Doctorat en Mathématiques &amp; Informatique</span>
-            <span class="en">PhD in Mathematics &amp; Computer Science</span>
+            <span data-lang="fr">Doctorat en Mathématiques &amp; Informatique</span>
+            <span data-lang="en">PhD in Mathematics &amp; Computer Science</span>
           </div>
           <div class="edu-school">
-            <span class="fr">Université Grenoble-Alpes · Soutenu le 12 septembre 2024</span>
-            <span class="en">Université Grenoble-Alpes · Defended 12 September 2024</span>
+            <span data-lang="fr">Université Grenoble-Alpes · Soutenu le 12 septembre 2024</span>
+            <span data-lang="en">Université Grenoble-Alpes · Defended 12 September 2024</span>
           </div>
         </div>
 
         <div class="edu-item">
           <div class="edu-year">2020 – 2021</div>
           <div class="edu-degree">
-            <span class="fr">Master 2 Mathématiques &amp; Informatique (ORCO)</span>
-            <span class="en">MSc Mathematics &amp; Computer Science (ORCO)</span>
+            <span data-lang="fr">Master 2 Mathématiques &amp; Informatique (ORCO)</span>
+            <span data-lang="en">MSc Mathematics &amp; Computer Science (ORCO)</span>
           </div>
           <div class="edu-school">Université Grenoble-Alpes</div>
         </div>
@@ -620,21 +613,21 @@
         <div class="edu-item">
           <div class="edu-year">2017 – 2020</div>
           <div class="edu-degree">
-            <span class="fr">Licence &amp; Master Mathématiques (Institut Fourier)</span>
-            <span class="en">BSc &amp; MSc Mathematics (Institut Fourier)</span>
+            <span data-lang="fr">Licence &amp; Master Mathématiques (Institut Fourier)</span>
+            <span data-lang="en">BSc &amp; MSc Mathematics (Institut Fourier)</span>
           </div>
           <div class="edu-school">
             Université Grenoble-Alpes
-            <span class="fr"> · Agrégation de Mathématiques (2019)</span>
-            <span class="en"> · Agrégation in Mathematics (2019)</span>
+            <span data-lang="fr"> · Agrégation de Mathématiques (2019)</span>
+            <span data-lang="en"> · Agrégation in Mathematics (2019)</span>
           </div>
         </div>
 
         <div class="edu-item">
           <div class="edu-year">2015 – 2017</div>
           <div class="edu-degree">
-            <span class="fr">Classes Préparatoires MPSI – MP*</span>
-            <span class="en">Preparatory Classes MPSI – MP*</span>
+            <span data-lang="fr">Classes Préparatoires MPSI – MP*</span>
+            <span data-lang="en">Preparatory Classes MPSI – MP*</span>
           </div>
           <div class="edu-school">Lycée Champollion, Grenoble</div>
         </div>
@@ -648,25 +641,25 @@
       <!-- Affiliations -->
       <div class="sidebar-card">
         <div class="sidebar-label">
-          <span class="fr">Affiliation</span>
-          <span class="en">Affiliation</span>
+          <span data-lang="fr">Affiliation</span>
+          <span data-lang="en">Affiliation</span>
         </div>
         <ul class="info-list">
           <li>
             <span class="label">
-              <span class="fr">Inst.</span><span class="en">Inst.</span>
+              <span data-lang="fr">Inst.</span><span data-lang="en">Inst.</span>
             </span>
             <span>Université Grenoble-Alpes</span>
           </li>
           <li>
             <span class="label">
-              <span class="fr">Ville</span><span class="en">City</span>
+              <span data-lang="fr">Ville</span><span data-lang="en">City</span>
             </span>
             <span>Grenoble, France</span>
           </li>
           <li>
             <span class="label">
-              <span class="fr">Thèse</span><span class="en">PhD</span>
+              <span data-lang="fr">Thèse</span><span data-lang="en">PhD</span>
             </span>
             <a href="https://theses.fr/s338580" target="_blank" rel="noopener" style="font-size:.85rem">theses.fr</a>
           </li>
@@ -676,38 +669,38 @@
       <!-- Teaching -->
       <div class="sidebar-card">
         <div class="sidebar-label">
-          <span class="fr">Enseignement</span>
-          <span class="en">Teaching</span>
+          <span data-lang="fr">Enseignement</span>
+          <span data-lang="en">Teaching</span>
         </div>
         <ul class="teach-list">
           <li>
-            <span class="fr">Analyse réelle (UGA)</span>
-            <span class="en">Real Analysis (UGA)</span>
+            <span data-lang="fr">Analyse réelle (UGA)</span>
+            <span data-lang="en">Real Analysis (UGA)</span>
             <span class="year">2022</span>
           </li>
           <li>
-            <span class="fr">Mathématiques pour les sciences (UGA)</span>
-            <span class="en">Mathematics for Sciences (UGA)</span>
+            <span data-lang="fr">Mathématiques pour les sciences (UGA)</span>
+            <span data-lang="en">Mathematics for Sciences (UGA)</span>
             <span class="year">2022</span>
           </li>
           <li>
-            <span class="fr">Algorithmique (UGA)</span>
-            <span class="en">Algorithmics (UGA)</span>
+            <span data-lang="fr">Algorithmique (UGA)</span>
+            <span data-lang="en">Algorithmics (UGA)</span>
             <span class="year">2022–23</span>
           </li>
           <li>
-            <span class="fr">Programmation Python (UGA)</span>
-            <span class="en">Python Programming (UGA)</span>
+            <span data-lang="fr">Programmation Python (UGA)</span>
+            <span data-lang="en">Python Programming (UGA)</span>
             <span class="year">2022–23</span>
           </li>
           <li>
-            <span class="fr">Algèbre &amp; Analyse (UGA)</span>
-            <span class="en">Algebra &amp; Analysis (UGA)</span>
+            <span data-lang="fr">Algèbre &amp; Analyse (UGA)</span>
+            <span data-lang="en">Algebra &amp; Analysis (UGA)</span>
             <span class="year">2023–24</span>
           </li>
           <li>
-            <span class="fr">Probabilités &amp; Stats (INSA Lyon)</span>
-            <span class="en">Probability &amp; Stats (INSA Lyon)</span>
+            <span data-lang="fr">Probabilités &amp; Stats (INSA Lyon)</span>
+            <span data-lang="en">Probability &amp; Stats (INSA Lyon)</span>
             <span class="year">2025</span>
           </li>
         </ul>
@@ -716,11 +709,11 @@
       <!-- Languages -->
       <div class="sidebar-card">
         <div class="sidebar-label">
-          <span class="fr">Langues</span>
-          <span class="en">Languages</span>
+          <span data-lang="fr">Langues</span>
+          <span data-lang="en">Languages</span>
         </div>
         <ul class="info-list">
-          <li><span class="label">🇫🇷 FR</span><span class="fr">Natif</span><span class="en">Native</span></li>
+          <li><span class="label">🇫🇷 FR</span><span data-lang="fr">Natif</span><span data-lang="en">Native</span></li>
           <li><span class="label">🇬🇧 EN</span><span>C1</span></li>
           <li><span class="label">🇩🇪 DE</span><span>B2</span></li>
         </ul>
@@ -729,8 +722,8 @@
       <!-- Programming -->
       <div class="sidebar-card">
         <div class="sidebar-label">
-          <span class="fr">Programmation</span>
-          <span class="en">Programming</span>
+          <span data-lang="fr">Programmation</span>
+          <span data-lang="en">Programming</span>
         </div>
         <div class="prog-list">
           <span class="prog-badge">Python</span>
@@ -746,12 +739,12 @@
       <!-- Music -->
       <div class="sidebar-card">
         <div class="sidebar-label">
-          <span class="fr">Autre</span>
-          <span class="en">Other</span>
+          <span data-lang="fr">Autre</span>
+          <span data-lang="en">Other</span>
         </div>
         <p style="font-size:.88rem;color:var(--ink-soft);line-height:1.6">
-          <span class="fr">Diplôme d'Études Musicales en flûte à bec &amp; musique ancienne — Conservatoire de Grenoble (2018)</span>
-          <span class="en">Diploma in Early Music &amp; Recorder — Conservatoire de Grenoble (2018)</span>
+          <span data-lang="fr">Diplôme d'Études Musicales en flûte à bec &amp; musique ancienne — Conservatoire de Grenoble (2018)</span>
+          <span data-lang="en">Diploma in Early Music &amp; Recorder — Conservatoire de Grenoble (2018)</span>
         </p>
       </div>
 
@@ -760,8 +753,8 @@
   </main>
 
   <footer>
-    <span class="fr">Thomas Suzan · Docteur en Mathématiques · Université Grenoble-Alpes</span>
-    <span class="en">Thomas Suzan · PhD in Mathematics · Université Grenoble-Alpes</span>
+    <span data-lang="fr">Thomas Suzan · Docteur en Mathématiques · Université Grenoble-Alpes</span>
+    <span data-lang="en">Thomas Suzan · PhD in Mathematics · Université Grenoble-Alpes</span>
   </footer>
 
   <script>
